@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='sstyle.css')}}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if title%}
+        <title>Avatar Quiz - {{title}}</title>
+    {% else %}
+        <title>Avatar Quiz</title>
+    {% endif%}
+</head>
+{% if current_user.is_authenticated %}
+{%if current_user.nation == 'water'%}
+<body style="background-color: #bedcfa;">
+{%endif%}
+{%if current_user.nation == 'fire'%}
+<body style="background-color: #d35d6e;">
+{%endif%}
+{%if current_user.nation == 'air'%}
+<body style="background-color: #a6a6a4;">
+{%endif%}
+{%else%}
+<body>
+{% endif %}
+
+  <main>
+      {% with messages = get_flashed_messages()%}
+        {%if messages%}
+            {%for message in messages%}
+                <div class="alert">{{message}}</div>
+            {%endfor%}
+        {% endif %}
+      {%endwith%}
+
+  {% block content %} {% endblock%}
+  </main>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+{% extends "layout.j2"%}
+{%block content%}
+<h1>Avatar Quiz</h1>
+{% if current_user.is_authenticated %}
+<p>Wellcome {{current_user.username}}<br>
+    ------<br>
+    Your score is {{current_user.get_score()}} <br>
+    Answer questions to gain some score<br>
+    Question's difficulty determines the score you gain
+</p>
+{% endif %}
+    <div>
+      <img src="{{url_for('static', filename='illustrationaang.png')}}" alt="avatar-main-illutsration" border="0" class="main_photo">
+    </div>
+    <div id="navbar">
+        {% if current_user.is_authenticated %}
+            <p><a class="link_style1" href="{{url_for('quiz')}}">Play</a></p>
+            <p><a class="link_style1" href="{{url_for('profile')}}">My Profile</a></p>
+            <p><a class="link_style1" href="{{url_for('board')}}">Board</a></p>
+            <p><a class="link_style1" href="{{url_for('credit')}}">Credit</a></p>
+            <p><a class="link_style1" href="{{url_for('logout')}}">Logout</a></p>
+
+        {% else %}
+            <p><a class="link_style1" href="{{url_for('login')}}">Login & play</a></p>
+            <p><a class="link_style1" href="{{url_for('register')}}">Register</a></p>
+            <p><a class="link_style1" href="{{url_for('board')}}">Board</a></p>
+            <p><a class="link_style1" href="{{url_for('credit')}}">Credit</a></p>
+        {% endif %}
+
+    </div>
+
+{%endblock content%}

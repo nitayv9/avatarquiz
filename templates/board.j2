@@ -1,0 +1,28 @@
+{% extends "layout.j2"%}
+{%block content%}
+        <h1>Board</h1>
+
+<div class="board">
+    <p>Top ten players are:</p>
+            <div class="row">
+                <div>#</div>
+                <div>username</div>
+                <div>nation</div>
+                <div>score</div>
+            </div>
+    {%for user in all_users%}
+    <div class="row">
+                <div>{{all_users.index(user) + 1}}</div>
+                <div>{{user.username}}</div>
+                <div>{{user.nation}}</div>
+                <div>{{user.get_score()}}</div>
+            </div>
+    {%endfor%}
+</div>
+
+
+
+ <div class="bot">
+            <a class="link_style1" href="{{url_for('home')}}">Go back Home page</a>
+        </div>
+{%endblock content%}

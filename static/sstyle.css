@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+
+body {
+    font-size: 20px;
+    color: #231f20;
+    background-color: #d5e7af;
+    font-family: 'Fredoka One', cursive;
+}
+
+main {
+    text-align: center;
+}
+
+section {
+    display: inline-block;
+    width: 85%;
+    background-color: rgb(0, 0, 0, 0.4);
+    min-width: 190px;
+    margin-bottom: 5em;
+    padding-bottom: 2em
+}
+
+h1 {
+    font-size: 3em;
+}
+
+form {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.4em;
+}
+
+input,
+select {
+    background-color: #d5e7af;
+    border: none;
+    padding: 0.3em;
+    border-radius: 0.5em;
+    font-family: 'Fredoka One', cursive;
+}
+
+label {
+    display: block;
+}
+
+input[type="submit"] {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.main_photo {
+    max-width: 40%;
+    height: auto;
+}
+
+.answer_img {
+    max-width: 80%;
+    height: auto;
+
+}
+
+.link_style1:hover {
+    font-size: 1.2em
+}
+
+.link_style1:visited,
+.link_style1:active,
+.link_style1 {
+    text-decoration: none;
+    color: #231f20;
+}
+
+
+.gray_small {
+    color: #b5b5b5;
+    font-size: 0.8em;
+}
+
+.gray_link:visited,
+.gray_link:active,
+.gray_link {
+    text-decoration: none;
+    color: #b5b5b5;
+}
+
+.gray_link:hover {
+    color: #d5e7af;
+}
+
+.alert {
+    display: inline-block;
+    background-color: rgba(50, 46, 46, 0.7);
+    padding: 1.4em;
+    font-size: 0.7em;
+    color: white;
+    letter-spacing: 4px;
+    border-radius: 3em;
+}
+
+.invalid-input {
+    background: rgba(193, 66, 66, 0.6);
+}
+
+.error_text {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #b5b5b5;
+    font-size: 0.6em;
+    display: block;
+    margin: 1em;
+}
+
+.answer_field {
+    margin-top: 2em;
+}
+
+.board {
+    background-color: rgb(0, 0, 0, 0.2);
+    width: 90%;
+    display: inline-block;
+    min-width: 300px;
+}
+
+.row {
+    display: flex;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-bottom: 2px dashed black;
+    justify-content: space-around;
+}
+
+.row:hover {
+    background-color: rgb(255, 255, 255, 0.2);
+}
+
+.bot{
+margin-top:10px;
+}
+
+@media screen and (max-width: 370px) {
+    .question {
+        font-size: 0.5em;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+
+}

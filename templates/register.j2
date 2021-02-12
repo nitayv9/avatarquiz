@@ -1,0 +1,66 @@
+{% extends "layout.j2"%}
+
+{%block content%}
+    <h1>Register</h1>
+    <section>
+      <p>Wellcome To Avatar Quiz, Please Fill up the registration form:</p>
+
+      <form method="POST" action="">
+        {{ form.hidden_tag() }}
+          <div>
+        {{form.username.label()}}
+          {% if form.username.errors %}
+          {{form.username(class="invalid-input")}}
+
+              {% for error in form.username.errors %}
+              <span class="error_text"> *{{error}} </span>
+
+              {% endfor %}
+          {% else %}
+              {{form.username}}
+          {% endif %}
+
+          </div>
+
+          <div>
+          {{form.nation.label()}}
+          {{form.nation}}
+              </div>
+          <div>
+        {{form.password.label()}}
+              {% if form.password.errors %}
+          {{form.password(class="invalid-input")}}
+
+              {% for error in form.password.errors %}
+              <span class="error_text"> *{{error}} </span>
+
+              {% endfor %}
+          {% else %}
+              {{form.password}}
+          {% endif %}
+          </div>
+          <div>{{form.confirm_password.label()}}
+              {% if form.confirm_password.errors %}
+          {{form.confirm_password(class="invalid-input")}}
+
+              {% for error in form.confirm_password.errors %}
+              <span class="error_text"> *{{error}} </span>
+
+              {% endfor %}
+          {% else %}
+              {{form.confirm_password}}
+          {% endif %}
+          </div>
+          <div>
+        {{ form.submit()}}
+          </div>
+    </form>
+        <div class="gray_small">
+            <small>Already have an account? <a href="{{url_for('login')}}" class="gray_link">Login here</a></small>
+            </div>
+    </section>
+      <div>
+        <a class="link_style1" href="{{url_for('home')}}">Go back Home page</a>
+      </div>
+
+{%endblock content%}

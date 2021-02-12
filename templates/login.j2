@@ -1,0 +1,36 @@
+{% extends "layout.j2"%}
+{%block content%}
+<h1>Log in</h1>
+<section>
+  <p>Enter your username and password:</p>
+
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <div>
+        {{form.username.label()}}
+          {% if form.username.errors %}
+          {{form.username(class="invalid-input")}}
+              {% for error in form.username.errors %}
+              <span class="error_text"> *{{error}} </span>
+              {% endfor %}
+          {% else %}
+              {{form.username}}
+          {% endif %}
+          </div>
+    <div>
+    {{form.password.label()}}
+    {{form.password}}
+    </div>
+    <div>
+    {{ form.submit()}}
+    </div>
+</form>
+<div class="gray_small">
+            <small>Dont have an account? <a href="{{url_for('register')}}" class="gray_link">Register here</a></small>
+            </div>
+</section>
+  <div>
+    <a class="link_style1" href="{{url_for('home')}}">Go back Home page</a>
+  </div>
+
+{%endblock content%}
