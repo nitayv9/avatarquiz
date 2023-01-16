@@ -19,8 +19,6 @@ db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 
-reset_db()
-
 @login_manager.user_loader
 def load_user(username):
     return User.query.get(str(username))
