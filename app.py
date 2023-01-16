@@ -7,7 +7,6 @@ from levinstein import levenshteinDistance
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager, UserMixin, login_user, current_user, logout_user
-import behind_the_scenes
 
 app = Flask(__name__)
 
@@ -15,12 +14,12 @@ app.config['SECRET_KEY'] = os.getenv('KEY')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 
 
-
+            
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 
-behind_the_scenes.reset_db()
+reset_db()
 
 @login_manager.user_loader
 def load_user(username):
@@ -184,5 +183,17 @@ def profile():
 def credit():
     return render_template('credit.j2')
 
+
+def upload_questions_from_csv():
+    with open('avatar_questions.csv') as csv_file:
+        csv_reader = csv.DictReader(csv_file)
+        for line in csv_reader:
+            answers = line['answers'].split(',')
+            print(line['questions'])
+            insert_question(line['questions'], line['score'], line['pic'], *answers)
+def reset_db():
+    db.drop_all()
+    db.create_all()
+    upload_questions_from_csv()
 if __name__ == '__main__':
     app.run()
