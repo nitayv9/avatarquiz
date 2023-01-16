@@ -19,6 +19,3 @@ def reset_db():
     db.drop_all()
     db.create_all()
     upload_questions_from_csv()
-
-
-reset_db()
