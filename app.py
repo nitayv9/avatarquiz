@@ -7,6 +7,7 @@ from levinstein import levenshteinDistance
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager, UserMixin, login_user, current_user, logout_user
+import behind_the_scenes
 
 app = Flask(__name__)
 
@@ -19,6 +20,7 @@ db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 
+behind_the_scenes.reset_db()
 
 @login_manager.user_loader
 def load_user(username):
