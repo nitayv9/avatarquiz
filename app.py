@@ -10,8 +10,8 @@ from flask_login import LoginManager, UserMixin, login_user, current_user, logou
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = os.environ['KEY']
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+app.config['SECRET_KEY'] = os.getenv('KEY')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 
 
 
