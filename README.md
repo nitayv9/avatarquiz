@@ -1,5 +1,3 @@
-# avatarquiz
-
 
 # Link to website
 
