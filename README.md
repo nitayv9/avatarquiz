@@ -17,16 +17,16 @@ Thank you for your interest in my project. Together, let's celebrate the world o
 
 # Screenshots
 
-Home-page-
+
 [![image.png](https://i.postimg.cc/nzGsWtyN/image.png)](https://postimg.cc/Q9VxBvxq)
 
-The top-10 board page - 
+
 [![Board.png](https://i.postimg.cc/rpWRS4QV/Board.png)](https://postimg.cc/kVJ5CB0z)
 
-The game page -
+
 [![image.png](https://i.postimg.cc/kGMV3p9G/image.png)](https://postimg.cc/1nTRDM81)
 
-Profile and satistics page -
+
 [![image.png](https://i.postimg.cc/Hxgc3LhQ/image.png)](https://postimg.cc/qt1vvp0R)
 
 # Credits
